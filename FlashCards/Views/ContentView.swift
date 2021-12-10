@@ -26,6 +26,19 @@ struct ContentView: View {
             })
                 .buttonStyle(.bordered)
             
+            //Show answer
+            Text("Mitochondria")
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+            
+            //Check answer
+            Button(action: {
+                //hide the answer
+            }, label: {
+                Text("Another")
+            })
+                .buttonStyle(.bordered)
+            
             
             
             
