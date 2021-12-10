@@ -14,9 +14,11 @@ struct ContentView: View {
     // It is randomly selected from the list of cards
     @State var currentCard = listOfCards.randomElement()!
     
+    // This controls whether the answer is visable
+    
+    @State var isAnswerShowing = false
+    
     // MARK: Computed Properties
-    
-    
     
     var body: some View {
         
@@ -42,6 +44,8 @@ struct ContentView: View {
             Text(currentCard.answer)
                 .font(.largeTitle)
                 .multilineTextAlignment(.center)
+            //          CONDITION   true    false
+                .opacity(isAnswerShowing ? 1.0 : 0.0)
             
             //Check answer
             Button(action: {
@@ -53,6 +57,9 @@ struct ContentView: View {
                 Text("Another")
             })
                 .buttonStyle(.bordered)
+            //          CONDITION   true    false
+                .opacity(isAnswerShowing ? 1.0 : 0.0)
+            
             
             
             
