@@ -12,7 +12,7 @@ struct ContentView: View {
     //MARK: Stored Properties
     // Store the card to work with
     // It is randomly selected from the list of cards
-    var currentCard = listOfCards.randomElement()!
+    @State var currentCard = listOfCards.randomElement()!
     
     // MARK: Computed Properties
     
@@ -30,6 +30,7 @@ struct ContentView: View {
             
             //Check answer
             Button(action: {
+                
                 //Reveal the answer
                 print("Button was pressed")
             }, label: {
@@ -44,6 +45,9 @@ struct ContentView: View {
             
             //Check answer
             Button(action: {
+                // Get another question
+                currentCard = listOfCards.randomElement()!
+                
                 //hide the answer
             }, label: {
                 Text("Another")
