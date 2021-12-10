@@ -26,16 +26,22 @@ struct ContentView: View {
             
             
             //Show Qustion
-            Text(currentCard.question)
-                .font(.largeTitle)
-                .multilineTextAlignment(.center)
+            HStack{
+                Spacer()
+                Text(currentCard.question)
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+            
             
             //Check answer
             Button(action: {
                 
                 //Reveal the answer
                 isAnswerShowing = true
-                print("Button was pressed")
+                withAnimation { isAnswerShowing = true
+                }
             }, label: {
                 Text("Check")
             })
@@ -51,8 +57,9 @@ struct ContentView: View {
             //Check answer
             Button(action: {
                 // Get another question
-                currentCard = listOfCards.randomElement()!
-                
+                withAnimation {
+                    currentCard = listOfCards.randomElement()!
+                }
                 //hide the answer
                 isAnswerShowing = false
             }, label: {
