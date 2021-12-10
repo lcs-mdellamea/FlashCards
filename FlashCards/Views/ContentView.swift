@@ -9,22 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("What is the power house of the cell?")
-            .padding()
         
-//        Button(action: {
-//            // NOTE: Output will not be shown unless this app is run in the "full" simulator
-//            print("Button was pressed")
-//        }, label: {
-//            Text("Press me")
-//        })
-//        .buttonStyle(.bordered)
-        
+        ScrollView {
+            
+            //Show Qustion
+            Text("What is the \"powerhouse\" of the cell?")
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+            
+            //Check answer
+            Button(action: {
+                //Reveal the answer
+                print("Button was pressed")
+            }, label: {
+                Text("Check")
+            })
+                .buttonStyle(.bordered)
+            
+            
+            
+            
+        }
+        .padding()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
